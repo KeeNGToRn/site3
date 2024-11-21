@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <title>bytecafe</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/bron.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/templatemo-lugx-gaming.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+  </head>
+  <body>
+    <div id="js-preloader" class="js-preloader">
+        <div class="preloader-inner">
+          <span class="dot"></span>
+          <div class="dots">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="index.html" class="logo">
+                            <img src="assets/images/logo.png" alt="" style="width: 220px;">
+                        </a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                          <li><a href="index.html">Главная</a></li>
+                      </ul>   
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+      </header>
+    <header class="page-header">Форма бронирования в кафе</header>
+    <main>
+      <form class="form"  method="post" oninput='daysoutput.value=dayscount.value'>
+        <label for="search">Тип устройства</label>
+        <select name="search">
+            <option>Комната ps5(До 7 человек)</option>
+            <option>ПК (общая зона)</option>
+            <option>Буткемп на команду</option>
+            <option>Стол в кафе</option>
+        </select>
+        <div class="one-third-width">
+          <label for="day">Число</label>
+          <input type="number" min="1" max="31" id="day" name="day" value="17">
+        </div>
+        <div class="two-third-width">
+          <label for="month">Месяц</label>
+          <input type="month" id="month" name="month" value="2024-09">
+        </div>
+        <div class="half-width" id="daysscrol">
+          <label for="dayscount">Количество часов</label>
+          1 <input type="range" id="dayscount" name="dayscount" min="1" max="24" step="1"> 14
+        </div>
+        <div class="half-width">
+            <label for="dayscount">неограничено</label>
+            <input type="checkbox" id="checkbox" name="dayscount"> 
+          </div>
+          <div class="buttons">
+            <input type="submit" value="Забронировать" id="bookButton">
+          </div>
+        
+          <div id="dialog">
+            <p>Успешно забронировано!</p>
+            <button id="returnButton">Вернуться на главную</button>
+          </div>
+        </div>
+      </form>
+    </main>
+    <footer>
+        <div class="container">
+          <div class="col-lg-12">
+            <p>Copyright © 2048 byte cafe. All rights reserved.</a></p>
+          </div>
+        </div>
+      </footer>
+<script>
+    const bookButton = document.getElementById('bookButton');
+    const dialog = document.getElementById('dialog');
+    const returnButton = document.getElementById('returnButton');
+
+    bookButton.addEventListener('click', function() {
+      dialog.style.display = 'block';
+    });
+
+    returnButton.addEventListener('click', function() {
+      dialog.style.display = 'none';
+    });
+
+document.getElementById('checkbox').addEventListener('click', function() {
+    document.getElementById('daysscrol').style.display = this.checked ? 'none' : 'block';
+});
+
+</script>  
+
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/js/isotope.min.js"></script>
+<script src="assets/js/owl-carousel.js"></script>
+<script src="assets/js/counter.js"></script>
+<script src="assets/js/custom.js"></script>
+
+</body>
+</html>
